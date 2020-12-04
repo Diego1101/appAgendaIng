@@ -23,4 +23,12 @@
         tools:layout_editor_absoluteX="155dp"
         tools:layout_editor_absoluteY="258dp" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mas cambios"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="430dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
