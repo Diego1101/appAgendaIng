@@ -20,6 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CAMBIO"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CAMBIO"
         tools:layout_editor_absoluteX="155dp"
         tools:layout_editor_absoluteY="258dp" />
 
