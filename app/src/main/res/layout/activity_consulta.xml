@@ -10,13 +10,13 @@
         android:id="@+id/lstConsultaContactos"
         android:layout_width="371dp"
         android:layout_height="309dp"
+        android:layout_below="@+id/txtTituloConsulta"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
-        android:layout_marginTop="155dp" />
+        android:layout_marginTop="84dp" />
 
     <Button
         android:id="@+id/btnConsultaRegresar"
@@ -39,5 +39,6 @@
         android:layout_marginTop="52dp"
         android:fontFamily="@font/notosanstc_black"
         android:text="Lista de contactos"
+        android:textColor="#FFFFFF"
         android:textSize="24sp" />
 </RelativeLayout>
