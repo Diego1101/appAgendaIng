@@ -7,6 +7,14 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mas cambios"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="430dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hola todo Ciber"
@@ -31,12 +39,12 @@
         tools:layout_editor_absoluteX="155dp"
         tools:layout_editor_absoluteY="258dp" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/btBoton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mas cambios"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="430dp" />
+        android:text="Siiii"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="466dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
