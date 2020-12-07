@@ -7,19 +7,19 @@
     tools:context=".Consulta">
 
     <ListView
-        android:id="@+id/lst"
+        android:id="@+id/lstConsultaContactos"
         android:layout_width="371dp"
         android:layout_height="309dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="77dp" />
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="155dp" />
 
     <Button
-        android:id="@+id/btnRegresar"
+        android:id="@+id/btnConsultaRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -29,4 +29,15 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="48dp"
         android:text="Regresar" />
+
+    <TextView
+        android:id="@+id/txtTituloConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/notosanstc_black"
+        android:text="Lista de contactos"
+        android:textSize="24sp" />
 </RelativeLayout>
