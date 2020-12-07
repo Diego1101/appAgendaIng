@@ -7,44 +7,100 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mas cambios"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="430dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hola todo Ciber"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="166dp"
+        android:text="Acceso"
+        android:textColor="#1D285C"
+        android:textSize="24sp"
+        app:fontFamily="@font/notosanstc_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CAMBIO"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="151dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CAMBIO"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="258dp" />
-
     <Button
-        android:id="@+id/btBoton"
+        android:id="@+id/btnAccesoAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Siiii"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
+        android:background="#1D285C"
+        android:fontFamily="@font/notosanstc_medium"
+        android:text="Aceptar"
+        android:textColor="@android:color/background_light"
         tools:layout_editor_absoluteX="166dp"
         tools:layout_editor_absoluteY="466dp" />
+
+    <TextView
+        android:id="@+id/lblAccesoUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="286dp"
+        android:text="Usuario"
+        android:textColor=" #337AB7"
+        android:textSize="14sp"
+        app:fontFamily="@font/notosanstc_medium" />
+
+    <TextView
+        android:id="@+id/lblAccesoContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="387dp"
+        android:text="Contraseña"
+        android:textColor=" #337AB7"
+        app:fontFamily="@font/notosanstc_medium" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="95dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="45dp"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/txtAccesoPas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="39dp"
+        android:layout_marginRight="39dp"
+        android:layout_marginBottom="221dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/txtAccesoUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="273dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
 </RelativeLayout>
