@@ -28,7 +28,9 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="48dp"
-        android:text="Regresar" />
+        android:background="#1D285C"
+        android:text="Regresar"
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:id="@+id/txtTituloConsulta"
@@ -39,6 +41,6 @@
         android:layout_marginTop="52dp"
         android:fontFamily="@font/notosanstc_black"
         android:text="Lista de contactos"
-        android:textColor="#FFFFFF"
+        android:textColor="#1D285C"
         android:textSize="24sp" />
 </RelativeLayout>

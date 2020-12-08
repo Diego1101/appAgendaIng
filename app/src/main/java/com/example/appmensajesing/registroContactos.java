@@ -14,7 +14,7 @@ public class registroContactos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_contactos);
     }
-    public void Acceso(View v){
+    public void consulta(View v){
         Intent chk=new Intent(this, Consulta.class);
         startActivity(chk);
     }
