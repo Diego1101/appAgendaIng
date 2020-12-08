@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Intent chk=new Intent(this,registroContactos.class);
         startActivity(chk);
     }
+    public void Menu(View v){
+        Intent chk=new Intent(this,menuPrincipal.class);
+        startActivity(chk);
+    }
 }

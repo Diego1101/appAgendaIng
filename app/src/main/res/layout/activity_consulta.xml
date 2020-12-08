@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Consulta">
 
+    <Button
+        android:id="@+id/btnConsultaRegresar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="48dp"
+        android:background="#1D285C"
+        android:onClick="Menu"
+        android:text="Regresar"
+        android:textColor="@android:color/background_light" />
+
     <ListView
         android:id="@+id/lstConsultaContactos"
         android:layout_width="371dp"
@@ -17,20 +32,6 @@
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="84dp" />
-
-    <Button
-        android:id="@+id/btnConsultaRegresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="48dp"
-        android:background="#1D285C"
-        android:text="Regresar"
-        android:textColor="@android:color/background_light" />
 
     <TextView
         android:id="@+id/txtTituloConsulta"

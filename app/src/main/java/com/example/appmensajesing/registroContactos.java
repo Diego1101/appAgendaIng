@@ -64,6 +64,10 @@ public class registroContactos extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Error"+ e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+    public void Menu(View v){
+        Intent chk=new Intent(this,menuPrincipal.class);
+        startActivity(chk);
+    }
     public void mostrarDatosS(String rawData) {
         try {
             JSONArray data = new JSONArray(rawData);

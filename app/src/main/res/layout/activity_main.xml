@@ -30,7 +30,7 @@
         android:layout_marginBottom="104dp"
         android:background="#1D285C"
         android:fontFamily="@font/notosanstc_medium"
-        android:onClick="Acceso"
+        android:onClick="Menu"
         android:text="Aceptar"
         android:textColor="@android:color/background_light"
         tools:layout_editor_absoluteX="166dp"

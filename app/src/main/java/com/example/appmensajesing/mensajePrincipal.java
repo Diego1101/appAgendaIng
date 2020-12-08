@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Consulta extends AppCompatActivity {
+public class mensajePrincipal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consulta);
+        setContentView(R.layout.activity_mensaje_principal);
     }
-    public void Menu(View v){
-        Intent chk=new Intent(this,menuPrincipal.class);
-        startActivity(chk);
+    public void Destinatario(View v){
+        Intent des=new Intent(this,seleccionDestinatario.class);
+        startActivity(des);
     }
 }

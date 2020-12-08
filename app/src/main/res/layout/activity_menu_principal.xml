@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menuPrincipal">
+
+
+    <ImageButton
+        android:id="@+id/imgContactos"
+        android:layout_width="139dp"
+        android:layout_height="162dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="215dp"
+        android:layout_marginRight="215dp"
+        android:background="#FAFAFA"
+        android:onClick="Registro"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/contacto" />
+
+    <ImageButton
+        android:id="@+id/imgMensajes"
+        android:layout_width="wrap_content"
+        android:layout_height="165dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="221dp"
+        android:layout_marginLeft="221dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:background="#FAFAFA"
+        android:onClick="Mensaje"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/chat" />
+
+    <TextView
+        android:id="@+id/lblContacto"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgContactos"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="-7dp"
+        android:text="Contactos"
+        android:textColor=" #337AB7"
+        android:textSize="18sp"
+        app:fontFamily="@font/notosanstc_medium" />
+
+    <TextView
+        android:id="@+id/lblMensaje"
+        android:layout_width="92dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/imgMensajes"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="-8dp"
+        android:text="Mensajes"
+        android:textColor=" #337AB7"
+        android:textSize="18sp"
+        app:fontFamily="@font/notosanstc_medium" />
+
+</RelativeLayout>

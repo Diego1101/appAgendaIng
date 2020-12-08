@@ -10,11 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".registroContactos"></activity>
+        <activity android:name=".seleccionDestinatario"></activity>
+        <activity android:name=".mensajeEnvio" />
+        <activity android:name=".mensajePrincipal" />
+        <activity android:name=".menuPrincipal" />
+        <activity android:name=".registroContactos" />
         <activity android:name=".Consulta" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

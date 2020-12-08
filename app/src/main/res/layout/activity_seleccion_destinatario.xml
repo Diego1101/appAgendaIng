@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".seleccionDestinatario">
+
+    <ListView
+        android:id="@+id/lvDestinatario"
+        android:layout_width="354dp"
+        android:layout_height="345dp"
+        android:layout_below="@+id/lblEnvio"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp" />
+
+    <TextView
+        android:id="@+id/lblEnvio"
+        android:layout_width="250dp"
+        android:layout_height="61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="42dp"
+        android:text="Enviar mensaje a:"
+        android:textColor=" #337AB7"
+        android:textSize="18sp"
+        app:fontFamily="@font/notosanstc_medium" />
+</RelativeLayout>

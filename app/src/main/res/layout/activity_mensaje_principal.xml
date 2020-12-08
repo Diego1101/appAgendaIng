@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mensajePrincipal">
+
+
+    <TextView
+        android:id="@+id/lblAccesoUsu5"
+        android:layout_width="81dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="301dp"
+        android:layout_marginLeft="301dp"
+        android:layout_marginTop="62dp"
+        android:text="Nuevo"
+        android:textColor=" #337AB7"
+        android:textSize="18sp"
+        app:fontFamily="@font/notosanstc_medium" />
+
+    <TextView
+        android:id="@+id/lblMensajes"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginRight="130dp"
+        android:gravity="center"
+        android:text="Mensajes"
+        android:textColor="#1D285C"
+        android:textSize="24sp"
+        app:fontFamily="@font/notosanstc_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <ImageButton
+        android:id="@+id/imgNuevo"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="261dp"
+        android:layout_marginLeft="261dp"
+        android:layout_marginTop="66dp"
+        android:background="#FAFAFA"
+        android:onClick="Destinatario"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/agregar" />
+
+    <ListView
+        android:id="@+id/lvMensajes"
+        android:layout_width="match_parent"
+        android:layout_height="568dp"
+        android:layout_below="@+id/lblMensajes"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-4dp"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp" />
+</RelativeLayout>
