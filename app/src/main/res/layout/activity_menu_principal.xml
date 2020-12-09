@@ -7,6 +7,21 @@
     tools:context=".menuPrincipal">
 
 
+    <Button
+        android:id="@+id/btnConsultaRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="108dp"
+        android:background="@color/colorPrimary"
+        android:onClick="Acceso"
+        android:text="Salir"
+        android:textColor="@android:color/background_light" />
+
     <ImageButton
         android:id="@+id/imgContactos"
         android:layout_width="139dp"

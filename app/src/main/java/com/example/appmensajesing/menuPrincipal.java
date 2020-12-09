@@ -21,6 +21,10 @@ public class menuPrincipal extends AppCompatActivity {
         Intent con=new Intent(this,Consulta.class);
         startActivity(con);
     }
+    public void Acceso(View v){
+        Intent acc=new Intent(this,MainActivity.class);
+        startActivity(acc);
+    }
     public void Mensaje(View v){
         Intent men=new Intent(this,mensajePrincipal.class);
         startActivity(men);
