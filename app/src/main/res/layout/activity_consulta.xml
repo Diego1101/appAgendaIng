@@ -6,6 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".Consulta">
 
+    <Spinner
+        android:id="@+id/spParametros"
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_below="@+id/txtTituloConsulta"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        tools:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/txtBusqueda"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spParametros"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:ems="10"
+        android:hint="Búsqueda por nombre"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spTipoBus"
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_below="@+id/txtTituloConsulta"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp" />
+
     <Button
         android:id="@+id/btnConsultaRegresar2"
         android:layout_width="wrap_content"
@@ -13,25 +64,25 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="57dp"
         android:background="#1D285C"
         android:onClick="Menu"
         android:text="Regresar"
         android:textColor="@android:color/background_light" />
 
     <ListView
-        android:id="@+id/lstConsultaContactos"
-        android:layout_width="371dp"
-        android:layout_height="309dp"
-        android:layout_below="@+id/txtTituloConsulta"
+        android:id="@+id/lvBusqueda"
+        android:layout_width="385dp"
+        android:layout_height="391dp"
+        android:layout_below="@+id/txtBusqueda"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="84dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp" />
 
     <TextView
         android:id="@+id/txtTituloConsulta"
@@ -39,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="23dp"
         android:fontFamily="@font/notosanstc_black"
         android:text="Lista de contactos"
         android:textColor="#1D285C"

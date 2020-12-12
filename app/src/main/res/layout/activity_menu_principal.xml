@@ -7,6 +7,36 @@
     tools:context=".menuPrincipal">
 
 
+    <ImageButton
+        android:id="@+id/imgNuevo2"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="224dp"
+        android:layout_marginLeft="224dp"
+        android:layout_marginTop="51dp"
+        android:background="#FAFAFA"
+        android:onClick="Consulta"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/buscar" />
+
+    <TextView
+        android:id="@+id/lblAccesoUsu2"
+        android:layout_width="94dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="264dp"
+        android:layout_marginLeft="264dp"
+        android:layout_marginTop="47dp"
+        android:text="Consultar"
+        android:textColor=" #337AB7"
+        android:textSize="18sp"
+        app:fontFamily="@font/notosanstc_medium" />
+
     <Button
         android:id="@+id/btnConsultaRegresar"
         android:layout_width="wrap_content"
