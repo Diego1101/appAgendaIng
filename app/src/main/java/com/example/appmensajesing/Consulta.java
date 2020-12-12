@@ -33,7 +33,7 @@ public class Consulta extends AppCompatActivity {
     int seleccion=0;
     ArrayAdapter<String> spinnerAdaptor;
     String resultadoID="No hay datos";
-    ArrayList<String> listaMostrar,listaBusqueda,listaParametros;
+    ArrayList<String> listaMostrar,listaBusqueda,listaParametros,listaClaves;
     ListView lsDatos;
     ArrayAdapter adaptador;
     EditText Busqueda;
@@ -121,6 +121,20 @@ public class Consulta extends AppCompatActivity {
 
             }
         });
+        //Seleccion de usuario para mostrar sus detalles
+        try{
+            lsDatos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    //Envio de ID de usuario seleccionado
+                    //Toast.makeText(Consulta.this, "Usuario ID: "+String.valueOf(listaClaves.get(i)), Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        }catch(Exception ex){
+            Toast.makeText(this, "Error: "+ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
+        }
+
     }
     public void Menu(View v){
         Intent chk=new Intent(this,menuPrincipal.class);
@@ -132,11 +146,13 @@ public class Consulta extends AppCompatActivity {
             int length = jsonDatos.length();
             resultadoID= jsonDatos.getJSONObject(0).getString("ID");
             listaParametros= new ArrayList<>();
+            listaClaves=new ArrayList<>();
             if (!resultadoID.equals("0")){
 
                 for (int i=0;i<length;i++){
                     JSONObject json = jsonDatos.getJSONObject(i);
                     listaParametros.add(json.getString("NOMBRE"));
+
                 }
                 spinnerAdaptor = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,listaParametros);
                 spParametros.setAdapter(spinnerAdaptor);
@@ -154,10 +170,12 @@ public class Consulta extends AppCompatActivity {
             lsDatos.setAdapter(null);
             if (length!=0){
                 resultadoID= jsonDatos.getJSONObject(0).getString("ID");
+                listaClaves=new ArrayList<>();
                 listaBusqueda= new ArrayList<>();
                 for (int i=0;i<length;i++){
                     JSONObject json = jsonDatos.getJSONObject(i);
                     listaBusqueda.add(json.getString("NOMBRE")+" - "+json.getString("EMAIL"));
+                    listaClaves.add(json.getString("ID"));
                 }
                 adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaBusqueda);
                 lsDatos.setAdapter(adaptador);
@@ -260,11 +278,13 @@ public class Consulta extends AppCompatActivity {
             int length = jsonDatos.length();
             resultadoID= jsonDatos.getJSONObject(0).getString("ID");
             listaBusqueda = new ArrayList<>();
+            listaClaves = new ArrayList<>();
             if (!resultadoID.equals("0")){
 
                 for (int i=0;i<length;i++){
                     JSONObject json = jsonDatos.getJSONObject(i);
                     listaBusqueda.add(json.getString("NOMBRE")+" - "+json.getString("EMAIL"));
+                    listaClaves.add(json.getString("ID"));
                 }
 
             }
