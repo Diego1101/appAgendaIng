@@ -33,9 +33,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginLeft="142dp"
-        android:layout_marginTop="87dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="85dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,8 +49,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="143dp"
-        android:layout_marginLeft="143dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
         android:layout_marginTop="155dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.107"
@@ -64,27 +64,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginBottom="46dp"
-        android:background=" #1D285C"
-        android:text="Registrar"
-        android:textColor="@android:color/background_light" />
-
-    <Button
-        android:id="@+id/btnRegistroConsultar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="134dp"
-        android:layout_marginLeft="134dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginBottom="53dp"
         android:background=" #1D285C"
-        android:onClick="consulta"
-        android:text="Consultar"
+        android:onClick="registrar"
+        android:text="Registrar"
         android:textColor="@android:color/background_light" />
 
     <Button
@@ -94,8 +80,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="252dp"
-        android:layout_marginLeft="252dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginLeft="205dp"
         android:layout_marginBottom="45dp"
         android:background=" #1D285C"
         android:onClick="Menu"
@@ -187,10 +173,23 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="241dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="205dp"
         android:text="Grupo"
+        android:textColor=" #337AB7" />
+
+    <TextView
+        android:id="@+id/lblRegistroGrupo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="256dp"
+        android:layout_marginLeft="256dp"
+        android:layout_marginTop="203dp"
+        android:text="Rol"
         android:textColor=" #337AB7" />
 
     <TextView
@@ -200,8 +199,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="66dp"
-        android:layout_marginLeft="66dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginTop="165dp"
         android:text="Semestre"
         android:textColor=" #337AB7" />
@@ -213,9 +212,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="102dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="100dp"
         android:text="Carrera"
         android:textColor=" #337AB7" />
 
@@ -308,7 +307,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="223dp" />
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="230dp" />
+
+    <Spinner
+        android:id="@+id/spRol"
+        android:layout_width="127dp"
+        android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="234dp"
+        android:layout_marginTop="232dp" />
 
 </RelativeLayout>
