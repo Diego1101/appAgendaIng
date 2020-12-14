@@ -273,15 +273,15 @@ public class registroContactos extends AppCompatActivity {
                 String url = "https://agendaing.one-2-go.com/servicioWeb/contacto.php?op=registrar&";
                 RequestParams parametros = new RequestParams();
                 parametros.put("nombre", nom.getText().toString());
-                parametros.put("ape", ape.getText().toString());
+                parametros.put("ap",ape.getText().toString());
                 parametros.put("usuario",us.getText().toString());
                 parametros.put("contra",con.getText().toString());
-                parametros.put("rol","1");
+                parametros.put("rol",rol);
                 parametros.put("tel",tel.getText().toString());
                 parametros.put("email",mail.getText().toString());
-                parametros.put("carrera", "1");
-                parametros.put("grupo", "1");
-                parametros.put("semestre","1");
+                parametros.put("carrera",car);
+                parametros.put("grupo",gr);
+                parametros.put("semestre",sm);
                 cliente.post(url, parametros, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -294,31 +294,33 @@ public class registroContactos extends AppCompatActivity {
                     }
                 });
             } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "Error "+ e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Error"+ e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
 
     }
 
     public void mostrarDatos(String dat) {
-        if (!resultados.equals("0")) {
-            Toast.makeText(getApplicationContext(), "Registrado" + resultados, Toast.LENGTH_SHORT).show();
+        if (!resultados.equals("{\"ID\":0}")) {
+            Toast.makeText(getApplicationContext(), "Registrado", Toast.LENGTH_SHORT).show();
+            limpiar();
         } else {
-            Toast.makeText(getApplicationContext(), "Algo salió mal", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "El usuario ya existe", Toast.LENGTH_SHORT).show();
         }
     }
 
     public String obDatosJSON(String response) {
         try {
-            JSONArray jsonDatos = new JSONArray(response);
-            resultados = jsonDatos.getJSONObject(0).getString("ID");
+            JSONObject jsonDatos = new JSONObject(response);
+            resultados=response;
+           // Toast.makeText(getApplicationContext(), "Registrado" + response , Toast.LENGTH_SHORT).show();
+
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
         }
         return resultados;
     }
-
 
     public void limpiar(){
         nom.setText("");

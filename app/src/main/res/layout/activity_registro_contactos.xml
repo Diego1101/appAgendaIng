@@ -121,9 +121,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="472dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="452dp"
         android:text="Correo"
         android:textColor=" #337AB7" />
 
@@ -134,9 +134,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="241dp"
-        android:layout_marginLeft="241dp"
-        android:layout_marginTop="474dp"
+        android:layout_marginStart="226dp"
+        android:layout_marginLeft="226dp"
+        android:layout_marginTop="452dp"
         android:text="Teléfono"
         android:textColor=" #337AB7" />
 
@@ -272,34 +272,6 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/txtRegistroCorreo"
-        android:layout_width="138dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="479dp"
-        android:layout_marginEnd="188dp"
-        android:layout_marginRight="188dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/txtRegistroTel"
-        android:layout_width="127dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="477dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
     <Spinner
         android:id="@+id/spRegistroGrupo"
         android:layout_width="130dp"
@@ -318,5 +290,31 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="234dp"
         android:layout_marginTop="232dp" />
+
+    <EditText
+        android:id="@+id/txtRegistroTel"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="119dp"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/txtRegistroCorreo"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginBottom="121dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 
 </RelativeLayout>
