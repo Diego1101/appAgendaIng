@@ -47,6 +47,7 @@ public class Consulta extends AppCompatActivity {
     ListView lsDatos;
     ArrayAdapter adaptador;
     EditText Busqueda;
+    String id_usuario="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,7 +103,7 @@ public class Consulta extends AppCompatActivity {
             spParametros.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        llenarBusqueda(seleccion);
+                    llenarBusqueda(seleccion);
                 }
                 @Override
                 public void onNothingSelected(AdapterView<?> adapterView) {
@@ -123,7 +124,7 @@ public class Consulta extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    llenarBusqueda(5);
+                llenarBusqueda(5);
             }
 
             @Override
@@ -144,11 +145,23 @@ public class Consulta extends AppCompatActivity {
         }catch(Exception ex){
             Toast.makeText(this, "Error: "+ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
         }
-
+         Intent intent = getIntent();
+         Bundle llenado = this.getIntent().getExtras();
+        //LLenado de clave usuario
+         try {
+           if (llenado!=null){
+               id_usuario = llenado.getString("id_usuario");
+            }
+             }catch(Exception ex){
+               Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
+            }
     }
     public void Menu(View v){
-        Intent chk=new Intent(this,menuPrincipal.class);
-        startActivity(chk);
+        Intent men=new Intent(this,menuPrincipal.class);
+        Bundle datos= new Bundle();
+        datos.putString("id_usuario",id_usuario);
+        men.putExtras(datos);
+        startActivity(men);
     }
     public void mostrarDatosS(String rawData) {
         try {
@@ -234,7 +247,7 @@ public class Consulta extends AppCompatActivity {
                 case 4: //Rol
                     parametros.put("rol",spParametros.getSelectedItem());
                     break;
-                    case 5: //Nombre
+                case 5: //Nombre
                     parametros.put("nombre",Busqueda.getText());
                     break;
                 default:
@@ -384,30 +397,30 @@ public class Consulta extends AppCompatActivity {
     public void detalleContacto(){
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Detalles contacto");
-            final TextView nombre = new TextView(this);
-            final TextView rl = new TextView(this);
-            final TextView tele = new TextView(this);
-            final TextView corr = new TextView(this);
-            //input.setText(lsTel.getItemAtPosition(position).toString());
-            nombre.setHint(nom);
-            rl.setHint(rol);
-            tele.setHint(tel);
-            corr.setHint(mail);
-            LinearLayout lila1= new LinearLayout(this);
-            lila1.setOrientation(LinearLayout.VERTICAL);
-            lila1.addView(nombre);
-            lila1.addView(rl);
-            lila1.addView(corr);
-            lila1.addView(tele);
-            builder.setView(lila1);
+        final TextView nombre = new TextView(this);
+        final TextView rl = new TextView(this);
+        final TextView tele = new TextView(this);
+        final TextView corr = new TextView(this);
+        //input.setText(lsTel.getItemAtPosition(position).toString());
+        nombre.setHint(nom);
+        rl.setHint(rol);
+        tele.setHint(tel);
+        corr.setHint(mail);
+        LinearLayout lila1= new LinearLayout(this);
+        lila1.setOrientation(LinearLayout.VERTICAL);
+        lila1.addView(nombre);
+        lila1.addView(rl);
+        lila1.addView(corr);
+        lila1.addView(tele);
+        builder.setView(lila1);
 
-            builder.setNeutralButton("Salir", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
-            builder.show();
+        builder.setNeutralButton("Salir", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
 
     }
     public void mostrarDatosL(String dat){

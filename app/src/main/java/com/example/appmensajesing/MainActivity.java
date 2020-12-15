@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(TextUtils.isEmpty(nom.getText()) || TextUtils.isEmpty(contra.getText())){
-                    Toast.makeText(getApplicationContext(), "LLenar todos los campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Asegurate de llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }else {
                     acceso();
                 }
@@ -84,8 +84,11 @@ public class MainActivity extends AppCompatActivity {
             if(!resultados.equals("0")){
                 resNom=data.getString("NOMBRE");
                 Toast.makeText(getApplicationContext(),"Bienvenido "+ resNom, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, menuPrincipal.class);
-                startActivity(intent);
+                Intent mensaje = new Intent(MainActivity.this, menuPrincipal.class);
+                Bundle datos= new Bundle();
+                datos.putString("id_usuario",resultados);
+                mensaje.putExtras(datos);
+                startActivity(mensaje);
             }else{
                 Toast.makeText(getApplicationContext(), "Acceso denegado", Toast.LENGTH_SHORT).show();
             }

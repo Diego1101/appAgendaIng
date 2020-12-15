@@ -7,19 +7,67 @@
     tools:context=".mensajeEnvio">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/lblUsuario"
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/ic_launcher_background"
+        android:gravity="center"
+        android:text="---"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:fontFamily="@font/notosanstc_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="52dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+    <ListView
+        android:id="@+id/lsConversacion"
+        android:layout_width="411dp"
+        android:layout_height="450dp"
+        android:layout_below="@+id/lblUsuario"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/reciclerViewer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </ScrollView>
+    <EditText
+        android:id="@+id/edtMensaje"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/lsConversacion"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lsConversacion"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="303dp"
+        android:layout_marginLeft="303dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="envio"
+        android:text="Enviar"
+        android:textColor="@android:color/background_light" />
 </RelativeLayout>

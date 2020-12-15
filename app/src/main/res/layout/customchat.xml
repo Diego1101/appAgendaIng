@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView_nombreyo"
+        android:layout_width="322dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="6dp"
+        android:gravity="right"
+        android:text="TextView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:fontFamily="@font/notosanstc_black"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView2_fechayo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_nombreyo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:gravity="right"
+        android:text="TextView"
+        android:textSize="11sp"
+        app:fontFamily="@font/notosanstc_light" />
+
+    <TextView
+        android:id="@+id/textView2_mensajeyo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2_fechayo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginRight="46dp"
+        android:gravity="right"
+        android:text="TextView"
+        android:textSize="15sp"
+        app:fontFamily="@font/notosanstc_light" />
+
+    <TextView
+        android:id="@+id/textView2_fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_nombre"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:text="TextView"
+        android:textSize="11sp"
+        app:fontFamily="@font/notosanstc_light" />
+
+    <TextView
+        android:id="@+id/textView_nombre"
+        android:layout_width="322dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:fontFamily="@font/notosanstc_black"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView2_mensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2_fecha"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:text="TextView"
+        android:textSize="15sp"
+        app:fontFamily="@font/notosanstc_light" />
+</RelativeLayout>

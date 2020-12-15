@@ -7,19 +7,67 @@
     tools:context=".seleccionDestinatario">
 
     <ListView
-        android:id="@+id/lvDestinatario"
-        android:layout_width="354dp"
-        android:layout_height="345dp"
+        android:id="@+id/lvBusqueda"
+        android:layout_width="385dp"
+        android:layout_height="391dp"
+        android:layout_below="@+id/txtBusqueda"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="3dp" />
+
+    <Spinner
+        android:id="@+id/spTipoBus"
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:layout_width="346dp"
+        android:layout_height="43dp"
         android:layout_below="@+id/lblEnvio"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="-3dp"
-        android:layout_marginLeft="-3dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp" />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp" />
+
+    <Spinner
+        android:id="@+id/spParametros"
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_below="@+id/spTipoBus"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        tools:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/txtBusqueda"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spParametros"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:ems="10"
+        android:hint="Búsqueda por nombre"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/lblEnvio"
@@ -28,11 +76,26 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="27dp"
         android:text="Enviar mensaje a:"
         android:textColor=" #337AB7"
         android:textSize="18sp"
         app:fontFamily="@font/notosanstc_medium" />
+
+    <ImageButton
+        android:id="@+id/imgAgregar"
+        android:layout_width="42dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#FAFAFA"
+        android:onClick="seleccionarDestinatario"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/agregar" />
 </RelativeLayout>
