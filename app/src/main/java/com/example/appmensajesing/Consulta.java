@@ -47,6 +47,7 @@ public class Consulta extends AppCompatActivity {
     ListView lsDatos;
     ArrayAdapter adaptador;
     EditText Busqueda;
+    String id_usuario="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -144,11 +145,23 @@ public class Consulta extends AppCompatActivity {
         }catch(Exception ex){
             Toast.makeText(this, "Error: "+ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
         }
-
+         Intent intent = getIntent();
+         Bundle llenado = this.getIntent().getExtras();
+        //LLenado de clave usuario
+         try {
+           if (llenado!=null){
+               id_usuario = llenado.getString("id_usuario");
+            }
+             }catch(Exception ex){
+               Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
+            }
     }
     public void Menu(View v){
-        Intent chk=new Intent(this,menuPrincipal.class);
-        startActivity(chk);
+        Intent men=new Intent(this,menuPrincipal.class);
+        Bundle datos= new Bundle();
+        datos.putString("id_usuario",id_usuario);
+        men.putExtras(datos);
+        startActivity(men);
     }
     public void mostrarDatosS(String rawData) {
         try {

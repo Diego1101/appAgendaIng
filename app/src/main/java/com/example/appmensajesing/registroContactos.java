@@ -36,6 +36,7 @@ public class registroContactos extends AppCompatActivity {
     private ArrayList<String> clavesS, clavesC, clavesG, clavesR;
     EditText nom, ape, us,con,tel, mail;
     Integer car,sm,gr,rol;
+    String id_usuario="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,12 +56,17 @@ public class registroContactos extends AppCompatActivity {
         llenarCarrera();
         llenarGrupo();
         llenarRol();
+         Intent intent = getIntent();
+         Bundle llenado = this.getIntent().getExtras();
+        //LLenado de clave usuario
+         try {
+           if (llenado!=null){
+               id_usuario = llenado.getString("id_usuario");
+            }
+             }catch(Exception ex){
+               Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
+            }
     }
-    public void consulta(View v){
-        Intent chk=new Intent(this, Consulta.class);
-        startActivity(chk);
-    }
-
     public void llenarRol(){
         try {
             AsyncHttpClient cliente = new AsyncHttpClient();

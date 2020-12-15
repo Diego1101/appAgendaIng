@@ -54,8 +54,21 @@ public class seleccionDestinatario extends AppCompatActivity {
         lsDatos = (ListView) findViewById(R.id.lvBusqueda);
         ImgSeleccion = (ImageButton) findViewById(R.id.imgAgregar);
         ImgSeleccion.setVisibility(View.INVISIBLE);
-        idUsuario="1";
+
         listar();
+         Intent intent = getIntent();
+         Bundle llenado = this.getIntent().getExtras();
+        //LLenado de clave usuario
+         try {
+           if (llenado!=null){
+               idUsuario = llenado.getString("id_usuario");
+            }
+             }catch(Exception ex){
+               Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        //Toast.makeText(this.getApplicationContext(),"ID "+idUsuario,Toast.LENGTH_SHORT).show();
+         //idUsuario="1";
+
         //LLenado de parametros
         try{
             spTipoBus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -138,7 +151,24 @@ public class seleccionDestinatario extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     //Envio de ID de usuario seleccionado
-                   // Toast.makeText(seleccionDestinatario.this, "Usuario ID: "+i, Toast.LENGTH_SHORT).show();
+                    String nombre = listaBusqueda.get(i);
+                    String[] parts = nombre.split(" - ");
+                    String usu= parts[0];//Nombre chat
+                    //Toast.makeText(seleccionDestinatario.this, "Usuario ID: "+listaClaves.get(i), Toast.LENGTH_SHORT).show();
+                    int id_Selected= Integer.parseInt(listaClaves.get(i));
+                    String datosEnvio="";
+                    if(id_Selected!=Integer.parseInt(idUsuario)){
+                        datosEnvio=usu+" - "+idUsuario+" - "+"idDes"+" - "+id_Selected;
+                        //Toast.makeText(seleccionDestinatario.this, datosEnvio, Toast.LENGTH_SHORT).show();
+                        Intent mensaje = new Intent(seleccionDestinatario.this, mensajeEnvio.class);
+                        Bundle datos= new Bundle();
+                        datos.putString("parametro",datosEnvio);
+                        mensaje.putExtras(datos);
+                        startActivity(mensaje);
+                    }else{
+                        Toast.makeText(seleccionDestinatario.this, "No te puedes enviar mensaje a ti mismo", Toast.LENGTH_SHORT).show();
+                    }
+
 
                 }
             });

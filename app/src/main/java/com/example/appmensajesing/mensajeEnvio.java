@@ -33,6 +33,7 @@ public class mensajeEnvio extends AppCompatActivity {
     String resultadoID="No hay datos",Tipochat="",id_chat="";
     ListView lsDatos;
     EditText txtMensaje;
+    Integer length=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +68,8 @@ public class mensajeEnvio extends AppCompatActivity {
             listaMensaje = new ArrayList<>();
             listaFecha = new ArrayList<>();
             resultadoID= jsonDatos.getJSONObject(0).getString("ID");
-            int length = jsonDatos.length();
+            length=0;
+            length = jsonDatos.length();
             if (length!=0){
                 for (int i=0;i<length;i++){
                     JSONObject json = jsonDatos.getJSONObject(i);
@@ -139,7 +141,7 @@ public class mensajeEnvio extends AppCompatActivity {
         }
     }
     public void mostrarDatosL(String dat){
-        if (!resultadoID.equals("0")){
+        if (!resultadoID.equals("0")&&length>0){
             //adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaBusqueda);
             lsDatos.setAdapter(null);
             mensajeEnvio.CustomAdapter customAdapter= new mensajeEnvio.CustomAdapter();
