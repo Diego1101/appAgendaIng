@@ -64,11 +64,11 @@ public class mensajeEnvio extends AppCompatActivity {
         try{
             JSONArray jsonDatos= new JSONArray(response);
             int length = jsonDatos.length();
-            resultadoID= jsonDatos.getJSONObject(0).getString("ID");
-            listaTipo = new ArrayList<>();
-            listaMensaje = new ArrayList<>();
-            listaFecha = new ArrayList<>();
             if (length!=0){
+                resultadoID= jsonDatos.getJSONObject(0).getString("ID");
+                listaTipo = new ArrayList<>();
+                listaMensaje = new ArrayList<>();
+                listaFecha = new ArrayList<>();
                 for (int i=0;i<length;i++){
                     JSONObject json = jsonDatos.getJSONObject(i);
                     listaFecha.add(json.getString("FECHA"));listaMensaje.add(json.getString("MENSAJE"));
@@ -82,7 +82,7 @@ public class mensajeEnvio extends AppCompatActivity {
 
                 }
             }
-        }catch (JSONException ex){
+        }catch (Exception ex){
             ex.printStackTrace();
             Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
         }
@@ -145,7 +145,6 @@ public class mensajeEnvio extends AppCompatActivity {
             mensajeEnvio.CustomAdapter customAdapter= new mensajeEnvio.CustomAdapter();
             lsDatos.setAdapter(customAdapter);
         }else{
-            listaMensaje.add("No se encontro la busqueda");
             lsDatos.setAdapter(null);
         }
     }
@@ -186,7 +185,7 @@ public class mensajeEnvio extends AppCompatActivity {
                 }
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                    lsDatos.setAdapter(null);
                 }
             });
         } catch (Exception e) {
@@ -210,6 +209,12 @@ public class mensajeEnvio extends AppCompatActivity {
             parametros.put("op","listar");
             parametros.put("id",id_usuario);
             parametros.put(Tipo,Parametros);
+            if(Tipo.equals("idDes")){
+                parametros.put("semestre",-1);
+                parametros.put("carrera",-1);
+                parametros.put("grupo",-1);
+                parametros.put("rol",-1);
+            }
             cliente.post(url, parametros, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -217,7 +222,7 @@ public class mensajeEnvio extends AppCompatActivity {
                 }
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                    lsDatos.setAdapter(null);
                 }
             });
 

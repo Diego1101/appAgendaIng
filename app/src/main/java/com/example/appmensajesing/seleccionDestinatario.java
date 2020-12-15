@@ -2,6 +2,7 @@ package com.example.appmensajesing;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -34,11 +35,12 @@ public class seleccionDestinatario extends AppCompatActivity {
     int nuevoParametro=0;
     ArrayAdapter<String> spinnerAdaptor;
     String resultadoID="No hay datos";
-    ArrayList<String> listaMostrar,listaBusqueda,listaParametros,listaClaves;
+    ArrayList<String> listaMostrar,listaBusqueda,listaParametros,listaClaves,listaEnvio;
     ListView lsDatos;
     ArrayAdapter adaptador;
     EditText Busqueda;
     ImageButton ImgSeleccion;
+    String idUsuario="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,7 @@ public class seleccionDestinatario extends AppCompatActivity {
         lsDatos = (ListView) findViewById(R.id.lvBusqueda);
         ImgSeleccion = (ImageButton) findViewById(R.id.imgAgregar);
         ImgSeleccion.setVisibility(View.INVISIBLE);
+        idUsuario="1";
         listar();
         //LLenado de parametros
         try{
@@ -328,24 +331,38 @@ public class seleccionDestinatario extends AppCompatActivity {
         }
     }
     public void seleccionarDestinatario(View view){
-      // int Seleccion= Integer.parseInt(spParametros.getSelectedItemId())+1;
+        int id_Selected= Integer.parseInt(String.valueOf(spParametros.getSelectedItemId()))+1;
+        String datosEnvio="";
         if(nuevoParametro!=0){
             switch(seleccion) {
                 case 1: //Carrera
-
+                    datosEnvio=spParametros.getSelectedItem().toString()+" - "+idUsuario+" - "+"carrera"+" - "+id_Selected;
                     break;
                 case 2: //Grupo
-
+                    datosEnvio=spParametros.getSelectedItem().toString()+" - "+idUsuario+" - "+"grupo"+" - "+id_Selected;
                     break;
                 case 3: //Semestre
-
+                    datosEnvio=spParametros.getSelectedItem().toString()+" - "+idUsuario+" - "+"semestre"+" - "+id_Selected;
                     break;
                 case 4: //Rol
+                 if (spParametros.getSelectedItem().equals("Alumno")){
+                datosEnvio="Alumnos"+" - "+idUsuario+" - "+"semestre"+" - "+id_Selected;
+                 }else{
 
+                     datosEnvio="Personal "+spParametros.getSelectedItem().toString()+" - "+idUsuario+" - "+"semestre"+" - "+id_Selected;
+                 }
                     break;
-                default:
+                default: //individual
+                    if(id_Selected!=Integer.parseInt(idUsuario)){
+                        datosEnvio=spParametros.getSelectedItem().toString()+" - "+idUsuario+" - "+"idDes"+" - "+id_Selected;
+                }
                     break;
             }
+            Intent mensaje = new Intent(seleccionDestinatario.this, mensajeEnvio.class);
+            Bundle datos= new Bundle();
+            datos.putString("parametro",datosEnvio);
+            mensaje.putExtras(datos);
+            startActivity(mensaje);
 
         }
     }
