@@ -39,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
         nom = (EditText) findViewById(R.id.txtAccesoUsu);
         contra = (EditText) findViewById(R.id.txtAccesoPas);
         acceso= (Button)findViewById(R.id.btnAccesoAceptar);
-        acceso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(TextUtils.isEmpty(nom.getText()) || TextUtils.isEmpty(contra.getText())){
-                    Toast.makeText(getApplicationContext(), "LLenar todos los campos", Toast.LENGTH_SHORT).show();
-                }else {
-                    acceso();
-                }
-            }
-        });
+       // acceso.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+        //    public void onClick(View v) {
+             //   if(TextUtils.isEmpty(nom.getText()) || TextUtils.isEmpty(contra.getText())){
+           //         Toast.makeText(getApplicationContext(), "LLenar todos los campos", Toast.LENGTH_SHORT).show();
+             //   }else {
+            //        acceso();
+            //    }
+           // }
+       // });
     }
 
     public void acceso() {

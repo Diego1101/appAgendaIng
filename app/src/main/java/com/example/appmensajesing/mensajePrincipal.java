@@ -120,9 +120,12 @@ public class mensajePrincipal extends AppCompatActivity {
                       if(listaBusqueda.contains(nombre)){
                           listaMensaje.set( listaBusqueda.indexOf(nombre), json.getString("MENSAJE"));
                       }else{
-                          listaBusqueda.add(nombre);
-                          listaMensaje.add(json.getString("MENSAJE"));
-                         listaClaves.add(nombre+" - "+idUsuario+" - "+"idDes"+" - "+Integer.parseInt(destinatario.getJSONObject(0).getString("Id")));
+                          if (Integer.parseInt(destinatario.getJSONObject(0).getString("Id"))!=Integer.parseInt(idUsuario)){
+                              listaBusqueda.add(nombre);
+                              listaMensaje.add(json.getString("MENSAJE"));
+                              listaClaves.add(nombre+" - "+idUsuario+" - "+"idDes"+" - "+Integer.parseInt(destinatario.getJSONObject(0).getString("Id")));
+                          }
+
                       }
                   }
 

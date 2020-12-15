@@ -1,17 +1,25 @@
 package com.example.appmensajesing;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -22,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
@@ -30,6 +39,7 @@ public class Consulta extends AppCompatActivity {
     public Spinner spTipoBus,spParametros;
     String[]opciones={"Selecciona un tipo de búsqueda...","Carrera","Grupo","Semestre","Rol"};
     String[]parametros;
+    String nom,rol,mail,tel;
     int seleccion=0;
     ArrayAdapter<String> spinnerAdaptor;
     String resultadoID="No hay datos";
@@ -92,7 +102,7 @@ public class Consulta extends AppCompatActivity {
             spParametros.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        llenarBusqueda(seleccion);
+                    llenarBusqueda(seleccion);
                 }
                 @Override
                 public void onNothingSelected(AdapterView<?> adapterView) {
@@ -113,7 +123,7 @@ public class Consulta extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    llenarBusqueda(5);
+                llenarBusqueda(5);
             }
 
             @Override
@@ -128,7 +138,7 @@ public class Consulta extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     //Envio de ID de usuario seleccionado
                     //Toast.makeText(Consulta.this, "Usuario ID: "+String.valueOf(listaClaves.get(i)), Toast.LENGTH_SHORT).show();
-
+                    buscaId(Integer.parseInt(listaClaves.get(i)));
                 }
             });
         }catch(Exception ex){
@@ -179,6 +189,13 @@ public class Consulta extends AppCompatActivity {
                 }
                 adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaBusqueda);
                 lsDatos.setAdapter(adaptador);
+                lsDatos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        //Toast.makeText(getApplicationContext(),"ID:"+listaClaves.get(position),Toast.LENGTH_SHORT).show();
+                        buscaId(Integer.valueOf(listaClaves.get(position)));
+                    }
+                });
             }
 
         }catch(Exception ex){
@@ -217,7 +234,7 @@ public class Consulta extends AppCompatActivity {
                 case 4: //Rol
                     parametros.put("rol",spParametros.getSelectedItem());
                     break;
-                    case 5: //Nombre
+                case 5: //Nombre
                     parametros.put("nombre",Busqueda.getText());
                     break;
                 default:
@@ -295,6 +312,47 @@ public class Consulta extends AppCompatActivity {
         }
         return  resultadoID;
     }
+
+    public void buscaId(Integer cv) {
+        try {
+            AsyncHttpClient cliente = new AsyncHttpClient();
+            String url = "https://agendaing.one-2-go.com/servicioWeb/contacto.php?op=detalle&";
+            RequestParams parametros = new RequestParams();
+            parametros.put("id",cv);
+
+            cliente.post(url, parametros, new AsyncHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                    //Toast.makeText(getApplicationContext(), "Entra", Toast.LENGTH_SHORT).show();
+                    mostrarDatos(new String(responseBody));
+                    detalleContacto();
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                }
+            });
+        } catch (Exception e) {
+
+        }
+    }
+    public void mostrarDatos(String rawData) {
+        try {
+            JSONObject data = new JSONObject(rawData);
+            nom=data.getString("NOMBRE");
+            rol=data.getString("ROL");
+            tel=data.getString("TELEFONO");
+            mail=data.getString("EMAIL");
+
+
+            //grid.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, gridData));
+        }catch(Exception ex){
+            ex.printStackTrace();
+            Toast.makeText(getApplicationContext(),"Error:"+ex.getMessage().toString(),Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void listar(){
         try{
             //Genera una tarea asincrona que va a correr en segundo plano
@@ -322,6 +380,35 @@ public class Consulta extends AppCompatActivity {
         }catch(Exception ex){
 
         }
+    }
+    public void detalleContacto(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Detalles contacto");
+        final TextView nombre = new TextView(this);
+        final TextView rl = new TextView(this);
+        final TextView tele = new TextView(this);
+        final TextView corr = new TextView(this);
+        //input.setText(lsTel.getItemAtPosition(position).toString());
+        nombre.setHint(nom);
+        rl.setHint(rol);
+        tele.setHint(tel);
+        corr.setHint(mail);
+        LinearLayout lila1= new LinearLayout(this);
+        lila1.setOrientation(LinearLayout.VERTICAL);
+        lila1.addView(nombre);
+        lila1.addView(rl);
+        lila1.addView(corr);
+        lila1.addView(tele);
+        builder.setView(lila1);
+
+        builder.setNeutralButton("Salir", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+
     }
     public void mostrarDatosL(String dat){
         if (!resultadoID.equals("0")){
