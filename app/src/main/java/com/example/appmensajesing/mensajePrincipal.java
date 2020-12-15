@@ -134,8 +134,8 @@ public class mensajePrincipal extends AppCompatActivity {
             }
 
         }catch (JSONException ex){
-            ex.printStackTrace();
-            Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
+        //    ex.printStackTrace();
+            //Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
         }
         return  resultadoID;
     }

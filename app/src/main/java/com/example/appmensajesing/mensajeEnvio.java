@@ -47,7 +47,7 @@ public class mensajeEnvio extends AppCompatActivity {
             if (llenado!=null){
                 String parametro = llenado.getString("parametro");
                 String[] parts = parametro.split(" - ");
-                Usuario.setText(parts[0]+parts[1]+parts[2]+parts[3]);//Nombre chat
+                Usuario.setText(parts[0]);//Nombre chat
                 idUsuario =(parts[1]);//Id usuario
                 Tipochat=parts[2];
                 id_chat=parts[3];
@@ -63,12 +63,12 @@ public class mensajeEnvio extends AppCompatActivity {
     public String obDatosLJSON(String response){
         try{
             JSONArray jsonDatos= new JSONArray(response);
+            listaTipo = new ArrayList<>();
+            listaMensaje = new ArrayList<>();
+            listaFecha = new ArrayList<>();
+            resultadoID= jsonDatos.getJSONObject(0).getString("ID");
             int length = jsonDatos.length();
             if (length!=0){
-                resultadoID= jsonDatos.getJSONObject(0).getString("ID");
-                listaTipo = new ArrayList<>();
-                listaMensaje = new ArrayList<>();
-                listaFecha = new ArrayList<>();
                 for (int i=0;i<length;i++){
                     JSONObject json = jsonDatos.getJSONObject(i);
                     listaFecha.add(json.getString("FECHA"));listaMensaje.add(json.getString("MENSAJE"));
@@ -83,8 +83,8 @@ public class mensajeEnvio extends AppCompatActivity {
                 }
             }
         }catch (Exception ex){
-            ex.printStackTrace();
-            Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
+           // ex.printStackTrace();
+           // Toast.makeText(this.getApplicationContext(),"Error"+ex.getMessage(),Toast.LENGTH_SHORT).show();
         }
         return  resultadoID;
     }
